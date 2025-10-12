@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../Nacos/">
       
-      
-        <link rel="next" href="../OpenFeign/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Nacos 注册/配置中心 - TechDocs</title>
+        <title>OpenFeign 远程调用 - TechDocs</title>
       
     
     
@@ -62,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nacos" class="md-skip">
+        <a href="#openfeign" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nacos 注册/配置中心
+              OpenFeign 远程调用
             
           </span>
         </div>
@@ -253,6 +251,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Nacos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nacos 注册/配置中心
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -270,7 +291,7 @@
   
   
   <span class="md-ellipsis">
-    Nacos 注册/配置中心
+    OpenFeign 远程调用
     
   </span>
   
@@ -283,7 +304,7 @@
   
   
   <span class="md-ellipsis">
-    Nacos 注册/配置中心
+    OpenFeign 远程调用
     
   </span>
   
@@ -308,109 +329,37 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 注册中心
+      1. 远程调用
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. 注册中心">
+    <nav class="md-nav" aria-label="1. 远程调用">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 服务注册
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.1 服务注册">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#111" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1.1 配置注册中心
+      1.1 开启功能
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#112" class="md-nav__link">
+  <a href="#12-api" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.2 开启服务注册/发现功能
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 服务发现
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.2 服务发现">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#121-discoveryclient" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.1 DiscoveryClient
+      1.2 调用微服务API
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#122-nacosservicediscovery" class="md-nav__link">
+  <a href="#13-api" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2.2 NacosServiceDiscovery
+      1.3 调用第三方API
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 负载均衡
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.3 负载均衡">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#131-loadbalancerclient" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3.1 LoadBalancerClient
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#132" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3.2 注解负载均衡
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -422,103 +371,52 @@
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 配置中心
+      2. 日志
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 配置中心">
+    <nav class="md-nav" aria-label="2. 日志">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#21" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 配置
+      2.1 基于配置类
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.1 基于配置类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.1 全局配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.2 局部配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#22" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 动态刷新
+      2.2 基于配置文件
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2.2 动态刷新">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-refreshscope" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2.1 @RefreshScope
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-configurationproperties" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2.2 ConfigurationProperties
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-nacosconfigmanager" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 NacosConfigManager
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-namespace-dataid-group" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 namespace, dataId, group
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.4 namespace, dataId, group">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#241-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.1 namespace
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#242-dataid" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.2 dataId
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#243-groupid" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.3 groupId
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -528,19 +426,70 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      面试题
+      3. 超时控制
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="面试题">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 重试机制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 拦截器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 拦截器">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
+  <a href="#51" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 如果注册中心宕机，远程调用是否可以成功？
+      5.1 请求拦截器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 请求拦截器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 基于配置类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 基于配置文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 响应拦截器
     </span>
   </a>
   
@@ -551,33 +500,19 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 兜底返回
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../OpenFeign/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    OpenFeign 远程调用
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -619,109 +554,37 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 注册中心
+      1. 远程调用
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. 注册中心">
+    <nav class="md-nav" aria-label="1. 远程调用">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 服务注册
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.1 服务注册">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#111" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1.1 配置注册中心
+      1.1 开启功能
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#112" class="md-nav__link">
+  <a href="#12-api" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.2 开启服务注册/发现功能
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 服务发现
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.2 服务发现">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#121-discoveryclient" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2.1 DiscoveryClient
+      1.2 调用微服务API
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#122-nacosservicediscovery" class="md-nav__link">
+  <a href="#13-api" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2.2 NacosServiceDiscovery
+      1.3 调用第三方API
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 负载均衡
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.3 负载均衡">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#131-loadbalancerclient" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3.1 LoadBalancerClient
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#132" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3.2 注解负载均衡
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -733,103 +596,52 @@
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 配置中心
+      2. 日志
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 配置中心">
+    <nav class="md-nav" aria-label="2. 日志">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#21" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 配置
+      2.1 基于配置类
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2.1 基于配置类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.1 全局配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1.2 局部配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#22" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 动态刷新
+      2.2 基于配置文件
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="2.2 动态刷新">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-refreshscope" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2.1 @RefreshScope
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-configurationproperties" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2.2 ConfigurationProperties
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-nacosconfigmanager" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 NacosConfigManager
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-namespace-dataid-group" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 namespace, dataId, group
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.4 namespace, dataId, group">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#241-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.1 namespace
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#242-dataid" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.2 dataId
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#243-groupid" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4.3 groupId
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -839,19 +651,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      面试题
+      3. 超时控制
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="面试题">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 重试机制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 拦截器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 拦截器">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
+  <a href="#51" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 如果注册中心宕机，远程调用是否可以成功？
+      5.1 请求拦截器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 请求拦截器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.1 基于配置类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1.2 基于配置文件
     </span>
   </a>
   
@@ -859,6 +708,29 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 响应拦截器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 兜底返回
+    </span>
+  </a>
   
 </li>
       
@@ -878,199 +750,179 @@
 
 
 
-<h1 id="nacos">Nacos 注册/配置中心</h1>
+<h1 id="openfeign">OpenFeign 远程调用</h1>
 <blockquote>
-<p>Nacos (Dynamic Naming and Configuration Service)，提供动态服务发现、配置管理和服务管理平台。</p>
+<p>Spring Cloud 的声明式 REST 客户端。</p>
 </blockquote>
-<h2 id="1">1. 注册中心</h2>
-<h3 id="11">1.1 服务注册</h3>
-<h4 id="111">1.1.1 配置注册中心</h4>
-<pre><code class="language-yaml">spring:
-  application:
-    name: ${server-name}
-  cloud:
-    nacos:
-      discovery:
-        server-addr: ${ip:port}
-</code></pre>
-<h4 id="112">1.1.2 开启服务注册/发现功能</h4>
-<pre><code class="language-java">@EnableDiscoveryClient
-@SpringBootApplication
+<h2 id="1">1. 远程调用</h2>
+<h3 id="11">1.1 开启功能</h3>
+<pre><code class="language-java">@SpringBootApplication
+@EnableFeignClients
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 }
 </code></pre>
-<p>[注] 导入 <code>spring-cloud-starter-alibaba-nacos-discovery</code> 依赖</p>
-<h3 id="12">1.2 服务发现</h3>
-<h4 id="121-discoveryclient">1.2.1 DiscoveryClient</h4>
-<pre><code class="language-java">@Autowired
-DiscoveryClient discoveryClient;
-
-public interface DiscoveryClient extends Ordered {
-    // ...
-
-    List&lt;ServiceInstance&gt; getInstances(String serviceId);
-
-    List&lt;String&gt; getServices();
-
-    // ...
+<p>[注] 导入 <code>spring-cloud-starter-openfeign</code> ，<code>spring-cloud-starter-loadbalancer</code> 依赖，自动负载均衡</p>
+<h3 id="12-api">1.2 调用微服务API</h3>
+<pre><code class="language-java">@FeignClient(value = &quot;service-product&quot;) // 调用方微服务自动负载均衡
+public interface ProductFeignClient {
+    @GetMapping(&quot;/product/{id}&quot;)
+    Product getProduct(@PathVariable(&quot;id&quot;) Long productId);
 }
 </code></pre>
-<h4 id="122-nacosservicediscovery">1.2.2 NacosServiceDiscovery</h4>
-<pre><code class="language-java">@Autowired
-NacosServiceDiscovery nacosServiceDiscovery;
+<p>[注] OpenFeign 使用 Loadbalancer 实现自动负载均衡。（客户端负载均衡）</p>
+<h3 id="13-api">1.3 调用第三方API</h3>
+<pre><code class="language-java">@FeignClient(value = &quot;weather-client&quot;, url=&quot;http://weather.com&quot;) // 第三方负责负载均衡
+public interface WeatherFeignClient {
 
-public class NacosServiceDiscovery {
-    // ...
-
-    public List&lt;ServiceInstance&gt; getInstances(String serviceId) throws NacosException {
-        String group = this.discoveryProperties.getGroup();
-        List&lt;Instance&gt; instances = this.namingService().selectInstances(serviceId, group, true);
-        return hostToServiceInstanceList(instances, serviceId);
-    }
-
-    public List&lt;String&gt; getServices() throws NacosException {
-        String group = this.discoveryProperties.getGroup();
-        ListView&lt;String&gt; services = this.namingService().getServicesOfServer(1, Integer.MAX_VALUE, group);
-        return services.getData();
-    }
-
-    // ...
+    @PostMapping(&quot;/api/weather&quot;)
+    String getWeather(@RequestHeader(&quot;Authorization&quot;) String auth,
+                      @RequestParam(&quot;token&quot;) String token,
+                      @RequestParam(&quot;cityId&quot;) String cityId);
 }
 </code></pre>
-<h3 id="13">1.3 负载均衡</h3>
-<h4 id="131-loadbalancerclient">1.3.1 LoadBalancerClient</h4>
-<pre><code class="language-java">@Autowired
-LoadBalancerClient loadBalancerClient;
-
-// 负载均衡选择服务实例
-loadBalancerClient.choose(&quot;${server-name}&quot;);
-</code></pre>
-<h4 id="132">1.3.2 注解负载均衡</h4>
+<p>[注] 调用第三方 API 接口，由第三方负责负载均衡。（服务端负载均衡）</p>
+<h2 id="2">2. 日志</h2>
+<h3 id="21">2.1 基于配置类</h3>
+<h4 id="211">2.1.1 全局配置</h4>
 <pre><code class="language-java">@Configuration
-public class ServiceConfig {
-
-    // String url = &quot;http://${server-name}/api/&quot; 负载均衡选择服务实例
-    @LoadBalanced
+public class FeignConfig {
     @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
+    public Logger.Level feignLoggerLevel() {
+        return Logger.Level.FULL;
     }
-
 }
 </code></pre>
-<p>[注] 导入 <code>spring-cloud-starter-loadbalancer</code> 依赖</p>
-<h2 id="2">2. 配置中心</h2>
-<h3 id="21">2.1 配置</h3>
+<h4 id="212">2.1.2 局部配置</h4>
+<pre><code class="language-java">// 不设置 @Configuration 注解
+public class FeignConfig {
+    @Bean
+    public Logger.Level feignLoggerLevel() {
+        return Logger.Level.FULL;
+    }
+}
+
+// 导入 configuration 
+@FeignClient(value = &quot;service-product&quot;, configuration = FeignConfig.class)
+public interface ProductFeignClient {
+    // ...
+}
+</code></pre>
+<p>[注] 设置 <code>logging.level.com.example.order.feign=debug</code></p>
+<h3 id="22">2.2 基于配置文件</h3>
 <pre><code class="language-yaml">spring:
   application:
-    name: service-product
-  profiles:
-    active: dev
+    name: service-order
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:  # 全局配置
+            loggerLevel: NONE
+          service-product:  # 局部配置
+            loggerLevel: FULL
+
+logging:
+  level:
+    com.example.order.feign: debug
+</code></pre>
+<h2 id="3">3. 超时控制</h2>
+<blockquote>
+<p>流程：建立连接（连接超时） -&gt; 发送请求 -&gt; 处理业务 -&gt; 返回数据（读取超时）</p>
+</blockquote>
+<pre><code class="language-yaml">spring:
+    cloud:
+        openfeign:
+            client:
+                config:
+                    default: # 默认配置, 可自定义 name, value, contextId
+                        connectTimeout: 5000
+                        readTimeout: 5000
+</code></pre>
+<p>[注] 多个 FeignClient 接口调用相同服务提供者 (name, vluae相同)，使用 contextId 唯一标识 FeignClient </p>
+<h2 id="4">4. 重试机制</h2>
+<pre><code class="language-java">@Bean
+Retryer retryer() {
+    return new Retryer.Default();
+}
+</code></pre>
+<h2 id="5">5. 拦截器</h2>
+<h3 id="51">5.1 请求拦截器</h3>
+<h4 id="511">5.1.1 基于配置类</h4>
+<pre><code class="language-java">@Component
+public class CustomRequestInterceptor implements RequestInterceptor {
+
+    @Override
+    public void apply(RequestTemplate requestTemplate) {
+
+    }
+}
+</code></pre>
+<pre><code class="language-java">// 不设置 @Configuration 注解
+public class FeignConfig implements RequestInterceptor {
+    @Override
+    public void apply(RequestTemplate requestTemplate) {
+        System.out.println(&quot;feignConfig&quot;);
+    }
+}
+
+// 导入 configuration 
+@FeignClient(value = &quot;service-product&quot;, configuration = FeignConfig.class)
+public interface ProductFeignClient {
+    // ...
+}
+</code></pre>
+<h4 id="512">5.1.2 基于配置文件</h4>
+<pre><code class="language-yaml">spring:
+  application:
+    name: service-order
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
       config:
-        namespace: ${spring.profiles.active:public}
         import-check:
           enabled: false
-
----
-spring:
-  config:
-    import:
-      - nacos:config1.yaml?group=group1
-      - nacos:config2.yaml?group=group1
-    activate:
-      on-profile: dev
----
-spring:
-  config:
-    import:
-      - nacos:config1.yaml?group=group1
-      - nacos:config2.yaml?group=group1
-      - nacos:config3.yaml?group=group1
-    activate:
-      on-profile: prod
+    openfeign:
+      client:
+        config:
+          default: # 全局
+            request-interceptors:
+              - com.example.order.interceptor.CustomRequestInterceptor              
+          service-product:
+            request-interceptors: #局部
+              - com.example.order.interceptor.CustomRequestInterceptor
 </code></pre>
-<p>[注] 导入 <code>spring-cloud-starter-alibaba-nacos-config</code> 依赖</p>
-<h3 id="22">2.2 动态刷新</h3>
+<h3 id="52">5.2 响应拦截器</h3>
+<h2 id="6">6. 兜底返回</h2>
 <blockquote>
-<p>加载动态配置</p>
+<p>Fallback：兜底返回，需要整合 Sentinel 实现</p>
 </blockquote>
-<h4 id="221-refreshscope">2.2.1 @RefreshScope</h4>
-<pre><code class="language-java">@RefreshScope
-@RestController
-public class DemoController {
-
-    @Value(&quot;${test.timeout}&quot;)
-    String timeout;
-}
-</code></pre>
-<h4 id="222-configurationproperties">2.2.2 ConfigurationProperties</h4>
 <pre><code class="language-java">@Component
-@ConfigurationProperties(prefix = &quot;test&quot;) // 配置批量绑定, ⽆需 @RefreshScope 实现⾃动刷新
-@Data
-public class DemoProperties {
-    String timeout;
-}
-
-@RestController
-public class DemoController {
-
-    @Autowired
-    DemoProperties demoProperties;
-}
-</code></pre>
-<h3 id="23-nacosconfigmanager">2.3 NacosConfigManager</h3>
-<pre><code class="language-java">@EnableDiscoveryClient
-@SpringBootApplication
-public class OrderMainApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(OrderMainApplication.class, args);
-    }
-
-    // 监听配置文件
-    @Bean
-    ApplicationRunner applicationRunner(NacosConfigManager nacosConfigManager) {
-        return args -&gt; {
-            ConfigService configService = nacosConfigManager.getConfigService();
-            configService.addListener(&quot;service-test.yaml&quot;, &quot;DEFAULT_GROUP&quot;, new Listener() {
-
-                @Override
-                public Executor getExecutor() {
-                    return Executors.newFixedThreadPool(4);
-                }
-
-                @Override
-                public void receiveConfigInfo(String configInfo) {
-                    System.out.println(&quot;configInfo:&quot; + configInfo);
-                }
-            });
-        };
+public class ProductFeignClientFallback implements ProductFeignClient {
+    @Override
+    public Product getProduct(Long productId) {
+        Product product = new Product();
+        product.setId(1L);
+        product.setProductName(&quot;fallback&quot;);
+        product.setPrice(new BigDecimal(&quot;5.0&quot;));
+        return product;
     }
 }
+
+@FeignClient(value = &quot;service-product&quot;, fallback = ProductFeignClientFallback.class)
+public interface ProductFeignClient {
+    @GetMapping(&quot;/product/{id}&quot;)
+    Product getProduct(@PathVariable(&quot;id&quot;) Long productId);
+}
 </code></pre>
-<h3 id="24-namespace-dataid-group">2.4 namespace, dataId, group</h3>
-<h4 id="241-namespace">2.4.1 namespace</h4>
-<p>命名空间：实现多环境隔离（local, development, test, beta, production）</p>
-<h4 id="242-dataid">2.4.2 dataId</h4>
-<p>数据集id：配置文件（name.suffix）</p>
-<h4 id="243-groupid">2.4.3 groupId</h4>
-<p>分组id：一般以微服务名字作为分组。</p>
-<h2 id="_1">面试题</h2>
-<h3 id="1_1">1. 如果注册中心宕机，远程调用是否可以成功？</h3>
-<ul>
-<li>
-<p>服务从未调用过注册中心，立即失败：<code>com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY</code></p>
-</li>
-<li>
-<p>服务调用过注册中心，注册中心宕机，实例未宕机，服务根据缓存实例名单，调用成功</p>
-</li>
-<li>服务调用过注册中心，注册中心和实例都宕机，服务根据缓存实例名单，调用失败：<code>java.net.ConnectException: Connection refused: connect</code></li>
-</ul>
+<pre><code class="language-yaml">feign:
+  sentinel:
+    enabled: true # 熔断功能
+</code></pre>
+<p>[注] 导入 <code>spring-cloud-starter-alibaba-sentinel</code> 依赖</p>
 
 
 
