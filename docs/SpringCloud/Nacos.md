@@ -4,18 +4,9 @@
 
 ## 1. 注册中心
 
-### 1.1 依赖
+### 1.1 服务注册
 
-```xml
-<dependency>
-    <groupId>com.alibaba.cloud</groupId>
-    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-</dependency>
-```
-
-### 1.2 服务注册
-
-#### 1.2.1 配置注册中心
+#### 1.1.1 配置注册中心
 
 ```yaml
 spring:
@@ -27,21 +18,23 @@ spring:
         server-addr: ${ip:port}
 ```
 
-#### 1.2.2 开启服务注册/发现功能
+#### 1.1.2 开启服务注册/发现功能
 
 ```java
 @EnableDiscoveryClient
 @SpringBootApplication
-public class DemoMainApplication {
+public class Application {
     public static void main(String[] args) {
-        SpringApplication.run(DemoMainApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
 ```
 
-### 1.3 服务发现
+[注] 导入 `spring-cloud-starter-alibaba-nacos-discovery` 依赖
 
-#### 1.3.1 DiscoveryClient
+### 1.2 服务发现
+
+#### 1.2.1 DiscoveryClient
 
 ```java
 @Autowired
@@ -58,7 +51,7 @@ public interface DiscoveryClient extends Ordered {
 }
 ```
 
-#### 1.3.2 NacosServiceDiscovery
+#### 1.2.2 NacosServiceDiscovery
 
 ```java
 @Autowired
@@ -83,18 +76,9 @@ public class NacosServiceDiscovery {
 }
 ```
 
-### 1.4 负载均衡
+### 1.3 负载均衡
 
-#### 1.4.1 依赖
-
-```xml
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-</dependency>
-```
-
-#### 1.4.2 LoadBalancerClient
+#### 1.3.1 LoadBalancerClient
 
 ```java
 @Autowired
@@ -104,7 +88,7 @@ LoadBalancerClient loadBalancerClient;
 loadBalancerClient.choose("${server-name}");
 ```
 
-#### 1.4.3 注解负载均衡
+#### 1.3.2 注解负载均衡
 
 ```java
 @Configuration
@@ -119,6 +103,8 @@ public class ServiceConfig {
 
 }
 ```
+
+[注] 导入 `spring-cloud-starter-loadbalancer` 依赖
 
 ## 2. 配置中心
 
@@ -157,6 +143,8 @@ spring:
       on-profile: prod
 ```
 
+[注] 导入 `spring-cloud-starter-alibaba-nacos-config` 依赖
+
 ### 2.2 动态刷新
 
 > 加载动态配置
@@ -193,8 +181,6 @@ public class DemoController {
 
 ### 2.3 NacosConfigManager
 
-> 监听配置文件
-
 ```java
 @EnableDiscoveryClient
 @SpringBootApplication
@@ -203,6 +189,7 @@ public class OrderMainApplication {
         SpringApplication.run(OrderMainApplication.class, args);
     }
 
+    // 监听配置文件
     @Bean
     ApplicationRunner applicationRunner(NacosConfigManager nacosConfigManager) {
         return args -> {
@@ -242,17 +229,10 @@ public class OrderMainApplication {
 
 ### 1. 如果注册中心宕机，远程调用是否可以成功？
 
-1. 服务从未调用过注册中心，立即失败
-
-```
-com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY
-```
+- 服务从未调用过注册中心，立即失败：`com.alibaba.nacos.api.exception.NacosException: Client not connected, current status:UNHEALTHY`
 
 - 服务调用过注册中心，注册中心宕机，实例未宕机，服务根据缓存实例名单，调用成功
-- 服务调用过注册中心，注册中心和实例都宕机，服务根据缓存实例名单，调用失败
+- 服务调用过注册中心，注册中心和实例都宕机，服务根据缓存实例名单，调用失败：`java.net.ConnectException: Connection refused: connect`
 
-```
-java.net.ConnectException: Connection refused: connect
-```
 
-### 2. 
+
