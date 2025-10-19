@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Nacos/">
+        <link rel="prev" href="../OpenFeign/">
       
       
-        <link rel="next" href="../Seata/">
+        <link rel="next" href="../Sentinel/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>OpenFeign 远程调用 - TechDocs</title>
+        <title>Seata 分布式事务 - TechDocs</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openfeign" class="md-skip">
+        <a href="#seata" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenFeign 远程调用
+              Seata 分布式事务
             
           </span>
         </div>
@@ -299,6 +299,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenFeign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenFeign 远程调用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -316,7 +339,7 @@
   
   
   <span class="md-ellipsis">
-    OpenFeign 远程调用
+    Seata 分布式事务
     
   </span>
   
@@ -329,7 +352,7 @@
   
   
   <span class="md-ellipsis">
-    OpenFeign 远程调用
+    Seata 分布式事务
     
   </span>
   
@@ -354,92 +377,35 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 远程调用
+      1. 架构原理
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. 远程调用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 开启功能
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 调用微服务API
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 调用第三方API
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 日志
+      2. 二阶段锁协议
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 日志">
+    <nav class="md-nav" aria-label="2. 二阶段锁协议">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
+  <a href="#21-growing-phase" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 基于配置类
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 基于配置类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#211" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1.1 全局配置
+      2.1 加锁阶段（Growing Phase）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#212" class="md-nav__link">
+  <a href="#22-shrinking-phase" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1.2 局部配置
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 基于配置文件
+      2.2 解锁阶段（Shrinking Phase）
     </span>
   </a>
   
@@ -453,54 +419,77 @@
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 超时控制
+      3. 二阶段提交协议
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3. 二阶段提交协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 准备阶段（Prepare）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 提交阶段（Commit）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 重试机制
+      4. 四种事物模式
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 拦截器
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 拦截器">
+    <nav class="md-nav" aria-label="4. 四种事物模式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51" class="md-nav__link">
+  <a href="#41-seata-at" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 请求拦截器
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.1 请求拦截器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#511" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1.1 基于配置类
+      4.1 Seata AT 模式
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#512" class="md-nav__link">
+  <a href="#42-seata-tcc" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1.2 基于配置文件
+      4.2 Seata TCC 模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-seata-saga" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Seata Saga 模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-seata-xa" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Seata XA 模式
     </span>
   </a>
   
@@ -508,29 +497,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 响应拦截器
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 兜底返回
-    </span>
-  </a>
   
 </li>
       
@@ -538,29 +504,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Seata/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Seata 分布式事务
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -625,92 +568,35 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 远程调用
+      1. 架构原理
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. 远程调用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 开启功能
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.2 调用微服务API
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.3 调用第三方API
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 日志
+      2. 二阶段锁协议
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 日志">
+    <nav class="md-nav" aria-label="2. 二阶段锁协议">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
+  <a href="#21-growing-phase" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 基于配置类
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 基于配置类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#211" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1.1 全局配置
+      2.1 加锁阶段（Growing Phase）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#212" class="md-nav__link">
+  <a href="#22-shrinking-phase" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1.2 局部配置
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 基于配置文件
+      2.2 解锁阶段（Shrinking Phase）
     </span>
   </a>
   
@@ -724,54 +610,77 @@
         <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 超时控制
+      3. 二阶段提交协议
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3. 二阶段提交协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 准备阶段（Prepare）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 提交阶段（Commit）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 重试机制
+      4. 四种事物模式
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 拦截器
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. 拦截器">
+    <nav class="md-nav" aria-label="4. 四种事物模式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51" class="md-nav__link">
+  <a href="#41-seata-at" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1 请求拦截器
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.1 请求拦截器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#511" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1.1 基于配置类
+      4.1 Seata AT 模式
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#512" class="md-nav__link">
+  <a href="#42-seata-tcc" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1.2 基于配置文件
+      4.2 Seata TCC 模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-seata-saga" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Seata Saga 模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-seata-xa" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Seata XA 模式
     </span>
   </a>
   
@@ -779,29 +688,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 响应拦截器
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 兜底返回
-    </span>
-  </a>
   
 </li>
       
@@ -821,179 +707,60 @@
 
 
 
-<h1 id="openfeign">OpenFeign 远程调用</h1>
-<blockquote>
-<p>Spring Cloud 的声明式 REST 客户端。</p>
-</blockquote>
-<h2 id="1">1. 远程调用</h2>
-<h3 id="11">1.1 开启功能</h3>
-<pre><code class="language-java">@SpringBootApplication
-@EnableFeignClients
-public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-}
-</code></pre>
-<p>[注] 导入 <code>spring-cloud-starter-openfeign</code> ，<code>spring-cloud-starter-loadbalancer</code> 依赖，自动负载均衡</p>
-<h3 id="12-api">1.2 调用微服务API</h3>
-<pre><code class="language-java">@FeignClient(value = &quot;service-product&quot;) // 调用方微服务自动负载均衡
-public interface ProductFeignClient {
-    @GetMapping(&quot;/product/{id}&quot;)
-    Product getProduct(@PathVariable(&quot;id&quot;) Long productId);
-}
-</code></pre>
-<p>[注] OpenFeign 使用 Loadbalancer 实现自动负载均衡。（客户端负载均衡）</p>
-<h3 id="13-api">1.3 调用第三方API</h3>
-<pre><code class="language-java">@FeignClient(value = &quot;weather-client&quot;, url=&quot;http://weather.com&quot;) // 第三方负责负载均衡
-public interface WeatherFeignClient {
-
-    @PostMapping(&quot;/api/weather&quot;)
-    String getWeather(@RequestHeader(&quot;Authorization&quot;) String auth,
-                      @RequestParam(&quot;token&quot;) String token,
-                      @RequestParam(&quot;cityId&quot;) String cityId);
-}
-</code></pre>
-<p>[注] 调用第三方 API 接口，由第三方负责负载均衡。（服务端负载均衡）</p>
-<h2 id="2">2. 日志</h2>
-<h3 id="21">2.1 基于配置类</h3>
-<h4 id="211">2.1.1 全局配置</h4>
-<pre><code class="language-java">@Configuration
-public class FeignConfig {
-    @Bean
-    public Logger.Level feignLoggerLevel() {
-        return Logger.Level.FULL;
-    }
-}
-</code></pre>
-<h4 id="212">2.1.2 局部配置</h4>
-<pre><code class="language-java">// 不设置 @Configuration 注解
-public class FeignConfig {
-    @Bean
-    public Logger.Level feignLoggerLevel() {
-        return Logger.Level.FULL;
-    }
-}
-
-// 导入 configuration 
-@FeignClient(value = &quot;service-product&quot;, configuration = FeignConfig.class)
-public interface ProductFeignClient {
-    // ...
-}
-</code></pre>
-<p>[注] 设置 <code>logging.level.com.example.order.feign=debug</code></p>
-<h3 id="22">2.2 基于配置文件</h3>
-<pre><code class="language-yaml">spring:
-  application:
-    name: service-order
-  cloud:
-    openfeign:
-      client:
-        config:
-          default:  # 全局配置
-            loggerLevel: NONE
-          service-product:  # 局部配置
-            loggerLevel: FULL
-
-logging:
-  level:
-    com.example.order.feign: debug
-</code></pre>
-<h2 id="3">3. 超时控制</h2>
-<blockquote>
-<p>流程：建立连接（连接超时） -&gt; 发送请求 -&gt; 处理业务 -&gt; 返回数据（读取超时）</p>
-</blockquote>
-<pre><code class="language-yaml">spring:
-    cloud:
-        openfeign:
-            client:
-                config:
-                    default: # 默认配置, 可自定义 name, value, contextId
-                        connectTimeout: 5000
-                        readTimeout: 5000
-</code></pre>
-<p>[注] 多个 FeignClient 接口调用相同服务提供者 (name, vluae相同)，使用 contextId 唯一标识 FeignClient </p>
-<h2 id="4">4. 重试机制</h2>
-<pre><code class="language-java">@Bean
-Retryer retryer() {
-    return new Retryer.Default();
-}
-</code></pre>
-<h2 id="5">5. 拦截器</h2>
-<h3 id="51">5.1 请求拦截器</h3>
-<h4 id="511">5.1.1 基于配置类</h4>
-<pre><code class="language-java">@Component
-public class CustomRequestInterceptor implements RequestInterceptor {
-
-    @Override
-    public void apply(RequestTemplate requestTemplate) {
-
-    }
-}
-</code></pre>
-<pre><code class="language-java">// 不设置 @Configuration 注解
-public class FeignConfig implements RequestInterceptor {
-    @Override
-    public void apply(RequestTemplate requestTemplate) {
-        System.out.println(&quot;feignConfig&quot;);
-    }
-}
-
-// 导入 configuration 
-@FeignClient(value = &quot;service-product&quot;, configuration = FeignConfig.class)
-public interface ProductFeignClient {
-    // ...
-}
-</code></pre>
-<h4 id="512">5.1.2 基于配置文件</h4>
-<pre><code class="language-yaml">spring:
-  application:
-    name: service-order
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-      config:
-        import-check:
-          enabled: false
-    openfeign:
-      client:
-        config:
-          default: # 全局
-            request-interceptors:
-              - com.example.order.interceptor.CustomRequestInterceptor              
-          service-product:
-            request-interceptors: #局部
-              - com.example.order.interceptor.CustomRequestInterceptor
-</code></pre>
-<h3 id="52">5.2 响应拦截器</h3>
-<h2 id="6">6. 兜底返回</h2>
-<blockquote>
-<p>Fallback：兜底返回，需要整合 Sentinel 实现</p>
-</blockquote>
-<pre><code class="language-java">@Component
-public class ProductFeignClientFallback implements ProductFeignClient {
-    @Override
-    public Product getProduct(Long productId) {
-        Product product = new Product();
-        product.setId(1L);
-        product.setProductName(&quot;fallback&quot;);
-        product.setPrice(new BigDecimal(&quot;5.0&quot;));
-        return product;
-    }
-}
-
-@FeignClient(value = &quot;service-product&quot;, fallback = ProductFeignClientFallback.class)
-public interface ProductFeignClient {
-    @GetMapping(&quot;/product/{id}&quot;)
-    Product getProduct(@PathVariable(&quot;id&quot;) Long productId);
-}
-</code></pre>
-<pre><code class="language-yaml">feign:
-  sentinel:
-    enabled: true # 熔断功能
-</code></pre>
-<p>[注] 导入 <code>spring-cloud-starter-alibaba-sentinel</code> 依赖</p>
+<h1 id="seata">Seata 分布式事务</h1>
+<h2 id="1">1. 架构原理</h2>
+<p><img alt="seata" src="../assets/seata.png" /></p>
+<p><strong>TC (Transaction Coordinator) 事务协调者</strong></p>
+<p>维护全局和分支事务的状态，驱动全局事务提交或回滚。</p>
+<p><strong>TM (Transaction Manager) 事务管理器</strong></p>
+<p>定义全局事务的范围：开始全局事务、提交或回滚全局事务。</p>
+<p><strong>RM(Resource Manager) 资源管理器</strong></p>
+<p>管理分支事务处理的资源，与 TC 交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。</p>
+<h2 id="2">2. 二阶段锁协议</h2>
+<p><strong>二阶段锁协议（Two-Phase Locking，2PL）</strong>，常见并发控制机制，用于保证事务的可串行化，一般用于单节点并发控制协议。</p>
+<h3 id="21-growing-phase">2.1 加锁阶段（Growing Phase）</h3>
+<p>事务可以申请新的锁（读/写锁，加锁操作在读/写数据之前完成），不能释放任何已经持有的锁</p>
+<h3 id="22-shrinking-phase">2.2 解锁阶段（Shrinking Phase）</h3>
+<p>事务释放了任意一个锁，不能再申请新锁</p>
+<h2 id="3">3. 二阶段提交协议</h2>
+<p>二阶段提交协议（<strong>Two-Phase Commit Protocol，2PC</strong>）是一种分布式事务一致性协议，用于确保多个参与节点在一个事务中 <strong>要么全部提交，要么全部回滚</strong>，一般用于解决跨节点一致性协议。</p>
+<h3 id="31-prepare">3.1 准备阶段（Prepare）</h3>
+<ol>
+<li>
+<p>协调者向所有参与者发送 <strong>prepare 请求</strong></p>
+</li>
+<li>
+<p>每个参与者执行以下操作：</p>
+</li>
+<li>
+<p>进行本地事务的预执行（不提交）</p>
+</li>
+<li>
+<p>写入 <strong>undo log / redo log</strong>，确保可以回滚或恢复</p>
+</li>
+<li>
+<p>如果执行成功，返回 <strong>Yes</strong> 给协调者；如果失败，返回 <strong>No</strong></p>
+</li>
+<li>
+<p>协调者收集所有参与者的响应</p>
+</li>
+</ol>
+<h3 id="32-commit">3.2 提交阶段（Commit）</h3>
+<ol>
+<li>响应全为 <strong>Yes</strong></li>
+<li>协调者向所有参与者发送 <strong>commit 请求</strong></li>
+<li>参与者提交本地事务并释放资源</li>
+<li>向协调者返回提交成功的确认</li>
+<li>响应全为 <strong>No</strong> 或 <strong>超时</strong></li>
+<li>协调者向所有参与者发送 <strong>rollback 请求</strong></li>
+<li>各参与者根据 undo log 回滚</li>
+<li>返回回滚确认</li>
+</ol>
+<h2 id="4">4. 四种事物模式</h2>
+<h3 id="41-seata-at">4.1 Seata AT 模式</h3>
+<h3 id="42-seata-tcc">4.2 Seata TCC 模式</h3>
+<h3 id="43-seata-saga">4.3 Seata Saga 模式</h3>
+<h3 id="44-seata-xa">4.4 Seata XA 模式</h3>
 
 
 
