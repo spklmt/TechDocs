@@ -1,4 +1,4 @@
-# Nacos 注册/配置中心
+# Nacos
 
 >Nacos (Dynamic Naming and Configuration Service)，提供动态服务发现、配置管理和服务管理平台。
 

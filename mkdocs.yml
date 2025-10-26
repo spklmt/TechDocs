@@ -1,3 +1,25 @@
+repo_url: https://github.com/spklmt/TechDocs
+repo_name: spklmt/TechDocs
 site_name: TechDocs
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - navigation.expand
+    - navigation.indexes
+    - content.tabs.link
+    - content.tooltips
+    - content.code.copy
+    - content.code.annotate
+    - content.code.select
+extra:
+  generator: true
+plugins:
+  - search
+  - awesome-pages

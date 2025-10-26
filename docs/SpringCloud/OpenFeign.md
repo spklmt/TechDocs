@@ -1,4 +1,4 @@
-# OpenFeign 远程调用
+# OpenFeign
 
 > Spring Cloud 的声明式 REST 客户端。
 

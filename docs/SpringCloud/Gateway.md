@@ -1,4 +1,4 @@
-# Gateway 网关
+# Gateway
 
 ## 1. 路由
 
