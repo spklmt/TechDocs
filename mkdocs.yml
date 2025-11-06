@@ -18,8 +18,37 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.code.select
+  # palette:
+  #   - scheme: default
+  #     toggle:
+  #       icon: material/weather-sunny
+  #       name: Switch to dark mode
+  #   - scheme: slate
+  #     toggle:
+  #       icon: material/weather-night
+  #       name: Switch to light mode
 extra:
   generator: true
 plugins:
   - search
   - awesome-pages
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - attr_list
+  - def_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      linenums: true
+      auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
