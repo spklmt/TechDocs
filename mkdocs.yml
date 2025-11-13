@@ -29,6 +29,8 @@ theme:
   #       name: Switch to light mode
 extra:
   generator: true
+extra_css:
+  - stylesheets/extra.css
 plugins:
   - search
   - awesome-pages

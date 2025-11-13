@@ -45,6 +45,28 @@ public interface WeatherFeignClient {
 
 [注] 调用第三方 API 接口，由第三方负责负载均衡。（服务端负载均衡）
 
+### 1.4 连接池
+
+OpenFeign对Http请求做了优雅的伪装，不过其底层发起http请求，依赖于其它的框架。
+
+- HttpURLConnection：默认实现，不支持连接池
+- Apache HttpClient ：支持连接池
+- OKHttp：支持连接池
+
+### 1.5 最佳实践
+
+**实践1**
+
+将微服务拆分多个子模块，其他微服务直接引入需要模块（适合大型项目）。
+
+![image-20251112193022216](assets/best-practice1.png)
+
+**实践2**
+
+使用一个模块专门存放所有微服务暴露的功能，其他微服务直接引入该模块（适合中小项目）。
+
+![image-20251112193040000](assets/best-practice2.png)
+
 ## 2. 日志
 
 ### 2.1 基于配置类
