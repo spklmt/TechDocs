@@ -1,0 +1,1658 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../MyBatisPlus/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Docker - TechDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TechDocs" class="md-header__button md-logo" aria-label="TechDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TechDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/spklmt/TechDocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    spklmt/TechDocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Spring
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SpringCloud/Nacos/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  SpringCloud
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TechDocs" class="md-nav__button md-logo" aria-label="TechDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TechDocs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/spklmt/TechDocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    spklmt/TechDocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Spring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Docker 基础
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Docker 基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 基本组成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 工作原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 命令总览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 帮助启动类命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 镜像命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 容器命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 数据卷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8 Dockerfile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8 Dockerfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8.1 保留字指令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8.2 保留字运行时机
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Docker 网络
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Docker 网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 基本命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 网络模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Docker Compose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Docker Compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 常用命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Docker 容器监控
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MyBatisPlus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MyBatisPlus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SpringCloud
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SpringCloud
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringCloud/Nacos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nacos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringCloud/OpenFeign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenFeign
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringCloud/Sentinel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sentinel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringCloud/Gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SpringCloud/Seata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Docker 基础
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Docker 基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 基本组成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 工作原理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 命令总览
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 帮助启动类命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 镜像命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 容器命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 数据卷
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8 Dockerfile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8 Dockerfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8.1 保留字指令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8.2 保留字运行时机
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Docker 网络
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Docker 网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 基本命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 网络模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Docker Compose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Docker Compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 常用命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Docker 容器监控
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h2 id="1-docker">1. Docker 基础<a class="headerlink" href="#1-docker" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 基本组成<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>镜像（image）</strong>：只读的模板，镜像可以用来创建 Docker 容器，一个镜像可以创建很多容器</li>
+<li><strong>容器（container）</strong>：类似于一个虚拟化的运行环境，容器是用镜像创建的运行实例</li>
+<li><strong>仓库（repository）</strong>：集中存放镜像文件的场所</li>
+</ul>
+<h3 id="12">1.2 工作原理<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>​       <strong>Docker</strong> 是一个 <strong>Client-Server</strong> 结构的系统，Docker 以 <strong>守护进程</strong> 运行在主机上， 然后通过 <strong>Socket 连接</strong> 从客户端访问，守护进程从客户端接受命令并管理运行在主机上的容器。 </p>
+<h3 id="13">1.3 命令总览<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p><img alt="cmd-docker" src="../assets/cmd-docker.png" /></p>
+<p><img alt="cmd_logic" src="../assets/cmd_logic.png" /></p>
+<h3 id="14">1.4 帮助启动类命令<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
+<p><strong>启动 docker</strong>：<code>systemctl start docker</code></p>
+<p><strong>开机启动</strong>：<code>systemctl enable docker</code></p>
+<p><strong>停止 docker</strong>：<code>systemctl stop docker</code></p>
+<p><strong>重启 docker</strong>：<code>systemctl restart docker</code></p>
+<p><strong>查看 docker 状态</strong>：<code>systemctl status docker</code></p>
+<p><strong>查看 docker 概要信息</strong>：<code>docker info</code></p>
+<p><strong>查看 docker 总体帮助文档</strong>：<code>docker --help</code></p>
+<p><strong>查看 docker 命令帮助文档</strong>：<code>docker command --help</code></p>
+<h3 id="15">1.5 镜像命令<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>docker image history</code></td>
+<td style="text-align: left;">Show the history of an image</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image import</code></td>
+<td style="text-align: left;">Import the contents from a tarball to create a filesystem image</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image inspect</code></td>
+<td style="text-align: left;">Display detailed information on one or more images</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image load</code></td>
+<td style="text-align: left;">Load an image from a tar archive or STDIN</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image ls</code></td>
+<td style="text-align: left;">List images</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image prune</code></td>
+<td style="text-align: left;">Remove unused images</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image pull</code></td>
+<td style="text-align: left;">Download an image from a registry</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image push</code></td>
+<td style="text-align: left;">Upload an image to a registry</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image rm</code></td>
+<td style="text-align: left;">Remove one or more images</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image save</code></td>
+<td style="text-align: left;">Save one or more images to a tar archive (streamed to STDOUT by default)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker image tag</code></td>
+<td style="text-align: left;">Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE</td>
+</tr>
+</tbody>
+</table>
+<p><strong>列出本地镜像</strong>：<code>docker images</code>，（-a，列出本地所有的镜像，-q，只显示镜像ID ）</p>
+<p><strong>查找镜像</strong>：<code>docker search image-name</code>，（--limit N，列出 N 个镜像）</p>
+<p><strong>下载镜像</strong>：<code>docker pull image-name:TAG</code>，（无 TAG 默认下载 latest）</p>
+<p><strong>删除镜像</strong>：<code>docker rmi image-id</code>，<code>docker rmi image-name1:TAG image-name2:TAG</code>，<code>docker rmi $(docker images -qa)</code>，（-f 强制删除）</p>
+<p><strong>查看镜像/容器/数据卷所占空间</strong>：<code>docker system df</code></p>
+<p><strong>提交镜像</strong>：<code>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</code></p>
+<p><strong>上传镜像</strong>：<code>docker push [OPTIONS] NAME[:TAG]</code></p>
+<h3 id="16">1.6 容器命令<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>docker container attach</code></td>
+<td style="text-align: left;">Attach local standard input, output, and error streams to a running container</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container commit</code></td>
+<td style="text-align: left;">Create a new image from a container's changes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container cp</code></td>
+<td style="text-align: left;">Copy files/folders between a container and the local filesystem</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container create</code></td>
+<td style="text-align: left;">Create a new container</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container diff</code></td>
+<td style="text-align: left;">Inspect changes to files or directories on a container's filesystem</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container exec</code></td>
+<td style="text-align: left;">Execute a command in a running container</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container export</code></td>
+<td style="text-align: left;">Export a container's filesystem as a tar archive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container inspect</code></td>
+<td style="text-align: left;">Display detailed information on one or more containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container kill</code></td>
+<td style="text-align: left;">Kill one or more running containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container logs</code></td>
+<td style="text-align: left;">Fetch the logs of a container</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container ls</code></td>
+<td style="text-align: left;">List containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container pause</code></td>
+<td style="text-align: left;">Pause all processes within one or more containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container port</code></td>
+<td style="text-align: left;">List port mappings or a specific mapping for the container</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container prune</code></td>
+<td style="text-align: left;">Remove all stopped containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container rename</code></td>
+<td style="text-align: left;">Rename a container</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container restart</code></td>
+<td style="text-align: left;">Restart one or more containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container rm</code></td>
+<td style="text-align: left;">Remove one or more containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container run</code></td>
+<td style="text-align: left;">Create and run a new container from an image</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container start</code></td>
+<td style="text-align: left;">Start one or more stopped containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container stats</code></td>
+<td style="text-align: left;">Display a live stream of container(s) resource usage statistics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container stop</code></td>
+<td style="text-align: left;">Stop one or more running containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container top</code></td>
+<td style="text-align: left;">Display the running processes of a container</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container unpause</code></td>
+<td style="text-align: left;">Unpause all processes within one or more containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container update</code></td>
+<td style="text-align: left;">Update configuration of one or more containers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker container wait</code></td>
+<td style="text-align: left;">Block until one or more containers stop, then print their exit codes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>列出当前运行的容器</strong>：<code>docker ps [OPTIONS]</code>，（-a，列出当前所有正在运行的容器 + 历史上运行过的容器，-l，显示最近创建的容器，-n，显示最近 n 个创建的容器，-q，静默模式，只显示容器编号）</p>
+<p><strong>创建并启动容器</strong>：<code>docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</code>，（-d，后台运行容器并返回容器ID，-i，以交互模式运行容器，-t，为容器重新分配一个伪输入终端，-P，随机端口映射，-p，指定端口映射）</p>
+<p><strong>启动容器</strong>：<code>docker start container-id/container-name</code></p>
+<p><strong>重启容器</strong>：<code>docker restart container-id/container-name</code></p>
+<p><strong>进入正在运行的容器</strong>：</p>
+<ul>
+<li><code>docker exec -it container-id</code>：在容器中打开新的终端，并且可以启动新的进程，用 exit 退出，不会导致容器的停止</li>
+<li><code>docker attach container-id</code>：直接进入容器启动命令的终端，不会启动新的进程，用 exit 退出，会导致容器的停止</li>
+</ul>
+<p><strong>退出容器</strong>：</p>
+<ul>
+<li><code>exit</code>：exit 退出，容器停止</li>
+<li><code>ctrl + p + q</code>：容器不停止</li>
+</ul>
+<p><strong>停止容器</strong>：</p>
+<ul>
+<li>停止容器：<code>docker stop container-id/container-name</code></li>
+<li>强制停止容器：<code>docker kill container-id/container-name</code></li>
+</ul>
+<p><strong>删除容器</strong>：</p>
+<ul>
+<li>删除单个：<code>docker rm container-id</code></li>
+<li>删除多个：<code>docker rm -f $(docker ps -a -q)</code>；<code>docker ps -a -q | xargs docker rm</code></li>
+</ul>
+<p><strong>容器日志</strong>：<code>docker logs container-id</code></p>
+<p><strong>容器进程</strong>：<code>docker top container-id</code></p>
+<p><strong>容器细节</strong>：<code>docker inspect container-id</code></p>
+<p><strong>容器拷贝文件到主机</strong>：<code>docker cp container-id:容器路径 主机路径</code></p>
+<p><strong>主机拷贝文件到容器</strong>：<code>docker cp 主机路径 container-id:容器路径</code></p>
+<h3 id="17">1.7 数据卷<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
+<p>​       数据卷是一个可供一个或多个容器使用的特殊目录，它绕过 UnionFS，在容器之间共享和重用，对数据卷的修改会立马生效，对数据卷的更新，不会影响镜像，数据卷默认会一直存在，即使容器被删除。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>docker volume create</code></td>
+<td style="text-align: left;">Create a volume</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker volume inspect</code></td>
+<td style="text-align: left;">Display detailed information on one or more volumes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker volume ls</code></td>
+<td style="text-align: left;">List volumes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker volume prune</code></td>
+<td style="text-align: left;">Remove unused local volumes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker volume rm</code></td>
+<td style="text-align: left;">Remove one or more volumes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker volume update</code></td>
+<td style="text-align: left;">Update a volume (cluster volumes only)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>添加容器卷</strong>：<code>-v [宿主机路径或卷名]:[容器内路径]</code></p>
+</li>
+<li>
+<p><strong>读写规则映射添加</strong>：<code>-v [宿主机路径或卷名]:[容器内路径]:[rw|ro]</code>（读写/只读，默认读写）</p>
+</li>
+<li>
+<p><strong>卷的继承和共享</strong>：<code>--volumes-from &lt;容器名或ID&gt;</code></p>
+</li>
+</ul>
+<p>[注] 不使用目录以名称开头会识别为数据卷而非本地目录，什么都不指定创建匿名数据卷</p>
+<h3 id="18-dockerfile">1.8 Dockerfile<a class="headerlink" href="#18-dockerfile" title="Permanent link">&para;</a></h3>
+<h4 id="181">1.8.1 保留字指令<a class="headerlink" href="#181" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>FROM</strong>：基础镜像，当前新镜像是基于哪个镜像的，指定一个已经存在的镜像作为模板，第一条必须是 <code>FROM</code></li>
+<li><strong>MAINTAINER</strong>：镜像维护者的姓名和邮箱地址</li>
+<li>
+<p><strong>ADD</strong>：将宿主机目录下的文件拷贝进镜像且会自动处理 <code>URL</code> 和 解压 <code>tar</code> 压缩包</p>
+</li>
+<li>
+<p><code>ADD [--chown=&lt;user&gt;:&lt;group&gt;] [--chmod=&lt;perms&gt;] [--checksum=&lt;checksum&gt;] &lt;src&gt;... &lt;dest&gt;</code></p>
+</li>
+<li><code>ADD [--chown=&lt;user&gt;:&lt;group&gt;] [--chmod=&lt;perms&gt;] ["&lt;src&gt;",... "&lt;dest&gt;"]</code></li>
+<li>
+<p><strong>COPY</strong>：拷贝文件和目录到镜像中，从构建上下文目录（docker build 所在路径）中源路径的文件/目录复制目标路径位置</p>
+</li>
+<li>
+<p><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] [--chmod=&lt;perms&gt;] &lt;src&gt;... &lt;dest&gt;</code></p>
+</li>
+<li>
+<p><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] [--chmod=&lt;perms&gt;] ["&lt;src&gt;",... "&lt;dest&gt;"]</code></p>
+</li>
+<li>
+<p><strong>RUN</strong>：容器构建时需要运行的命令</p>
+</li>
+<li>
+<p>shell 格式：<code>RUN &lt;命令行命令&gt;</code></p>
+</li>
+<li>exec 格式：<code>RUN ["可执行文件", "参数1", "参数2"]</code></li>
+</ul>
+<hr />
+<ul>
+<li>
+<p><strong>WORKDIR</strong>：指定在创建容器后，终端默认登录进来的工作目录</p>
+</li>
+<li>
+<p><strong>USER</strong>：指定该镜像以什么样的用户去执行，不指定默认是 <code>root</code></p>
+</li>
+</ul>
+<hr />
+<ul>
+<li><strong>CMD</strong>：指定容器启动后运行的命令。如果有多个 <code>CMD</code> 指令，只有最后一个生效。</li>
+<li>shell 格式：<code>CMD command param1 param2</code> </li>
+<li>exec 格式：<code>CMD ["executable","param1","param2"]</code></li>
+<li>作为 <code>ENTRYPOINT</code> 默认参数，exec格式：<code>CMD ["param1","param2"]</code></li>
+<li><strong>ENV</strong>：用来在构建镜像过程中设置环境变量</li>
+<li>
+<p><strong>EXPOSE</strong>：当前容器对外暴露出的端口</p>
+</li>
+<li>
+<p><strong>VOLUME</strong>：容器数据卷，用于数据保存和持久化</p>
+</li>
+<li><strong>ENTRYPOINT</strong>：类似 <code>CMD</code> 命令，但是 <code>ENTRYPOINT</code> 不会被 <code>docker run</code> 后面的命令覆盖，这些命令行参数会被当做参数传递给 <code>ENTRYPOINT</code> 指令指定的程序（即相当于 ENTRYPOINT 和 CMD 并用，CMD 给 ENTRYPOINT 传参）。如果有多个 <code>ENTRYPOINT</code> 指令，只有最后一个生效。</li>
+<li>shell格式：<code>ENTRYPOINT command param1 param2</code></li>
+<li>exec 格式：<code>ENTRYPOINT ["executable", "param1", "param2"]</code></li>
+</ul>
+<h4 id="182">1.8.2 保留字运行时机<a class="headerlink" href="#182" title="Permanent link">&para;</a></h4>
+<p><img alt="reserved_ word" src="../assets/reserved_%20word.png" /></p>
+<h2 id="2-docker">2. Docker 网络<a class="headerlink" href="#2-docker" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 基本命令<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>docker network connect</code></td>
+<td style="text-align: left;">Connect a container to a network</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker network create</code></td>
+<td style="text-align: left;">Create a network</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker network disconnect</code></td>
+<td style="text-align: left;">Disconnect a container from a network</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker network inspect</code></td>
+<td style="text-align: left;">Display detailed information on one or more networks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker network ls</code></td>
+<td style="text-align: left;">List networks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker network prune</code></td>
+<td style="text-align: left;">Remove all unused networks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>docker network rm</code></td>
+<td style="text-align: left;">Remove one or more networks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 网络模式<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p><strong>bridge mode</strong>：使用 <code>--network bridge</code> 指定，默认使用 <code>docker0</code></p>
+<p>​       Docker 服务默认会创建一个 docker0 网桥（其上有一个 docker0 内部接口），该桥接网络的名称为docker0，它在内核层连通了其他的物理或虚拟网卡，这就将所有容器和本地主机都放到同一个物理网络。Docker 默认指定了 docker0 接口 的 IP 地址和子网掩码，让主机和容器之间可以通过网桥相互通信。（网桥的 <strong>veth</strong> 接口连接容器的 <strong>eth0</strong> 网卡）</p>
+<p><strong>host mode</strong>：使用 <code>--network host</code> 指定</p>
+<p>​       容器将不会获得一个独立的 Network Namespace， 而是和宿主机共用一个 Network Namespace。容器将不会虚拟出自己的网卡而是使用宿主机的IP和端口。</p>
+<p><strong>none mode</strong>：使用 <code>--network none</code> 指定</p>
+<p>​       禁用网络功能，只有 lo 标识（即127.0.0.1 表示本地回环）</p>
+<p><strong>container mode</strong>：使用 <code>--network container:container-name / container:container-id</code> 指定</p>
+<p>​       新建的容器和已经存在的一个容器共享一个网络ip配置而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等。同样，两个容器除了网络方面，其他的如文件系统、进程列表等还是隔离的。</p>
+<h2 id="3-docker-compose">3. Docker Compose<a class="headerlink" href="#3-docker-compose" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 常用命令<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">cmd</th>
+<th style="text-align: center;">func</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">docker-compose -h</td>
+<td style="text-align: center;">查看帮助</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose up -d</td>
+<td style="text-align: center;">（-d 后台）启动所有docker-compose服务</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose down</td>
+<td style="text-align: center;">停止并删除容器、网络、卷、镜像</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose restart</td>
+<td style="text-align: center;">重启服务</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose start</td>
+<td style="text-align: center;">启动服务</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose stop</td>
+<td style="text-align: center;">停止服务</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose ps</td>
+<td style="text-align: center;">展示当前 docker-compose 编排过的运行的所有容器</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose top</td>
+<td style="text-align: center;">展示当前 docker-compose 编排过的容器进程</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose config</td>
+<td style="text-align: center;">检查配置</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose exec yml里面的服务id</td>
+<td style="text-align: center;">进入容器实例内部</td>
+</tr>
+<tr>
+<td style="text-align: center;">docker-compose logs yml里面的服务id</td>
+<td style="text-align: center;">查看容器输出日志</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-docker">4. Docker 容器监控<a class="headerlink" href="#4-docker" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>CAdvisor</strong>：容器资源监控工具,包括容器的内存,CPU,网络IO,磁盘IO等监控,同时提供了一个WEB页面用于查看容器的实时运行状态。</li>
+<li><strong>InfluxDB</strong>：InfluxDB是一个时序数据库，专门用于存储时序相关数据，很适合存储CAdvisor的数据。</li>
+<li><strong>Granfana</strong>：数据监控分析可视化平台,支持多种数据源配置和丰富的插件及模板功能,支持图表权限控制和报警。</li>
+</ul>
+<p><strong>协调工作</strong>：CAdvisor 负责收集容器的随时间变化的数据，InfluxDB 负责存储时序数据，Grafana 负责分析和展示时序数据。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="../MyBatisPlus/" class="md-footer__link md-footer__link--next" aria-label="Next: MyBatisPlus">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MyBatisPlus
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.annotate", "content.code.select"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
